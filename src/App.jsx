@@ -1,97 +1,145 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Utensils, Pizza, Beer, MapPin, Phone } from 'lucide-react';
+import Hero from './components/sections/Hero';
 
 function App() {
   return (
     <div className="min-h-screen bg-cream text-wood-dark font-sans">
       {/* Header */}
-      <header className="bg-wood text-cream py-4 px-6 fixed w-full z-50 shadow-md">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-serif font-bold tracking-wider">RESTAURACE U SCHWARZŮ</h1>
-          <nav className="hidden md:flex space-x-8 text-sm font-medium">
-            <a href="#menu" className="hover:text-brick transition-colors">JÍDELNÍ LÍSTEK</a>
-            <a href="#pizzerie" className="hover:text-brick transition-colors">PIZZERIE</a>
-            <a href="#akce" className="hover:text-brick transition-colors">AKCE</a>
-            <a href="#kontakt" className="hover:text-brick transition-colors">KONTAKT</a>
+      <header className="fixed w-full z-50 transition-all duration-300 bg-wood/90 backdrop-blur-md border-b border-wood-light/20">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex flex-col"
+          >
+            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-[0.1em] text-cream">
+              RESTAURACE <span className="text-brick">U SCHWARZŮ</span>
+            </h1>
+            <span className="text-[10px] tracking-[0.4em] text-brick-light font-bold uppercase -mt-1">Brno - Řečkovice</span>
+          </motion.div>
+          
+          <nav className="hidden lg:flex space-x-10 text-[11px] font-bold tracking-[0.2em] text-cream/70 uppercase">
+            <a href="#menu" className="hover:text-brick transition-colors">Jídelní lístek</a>
+            <a href="#pizzerie" className="hover:text-brick transition-colors">Pizzerie</a>
+            <a href="#akce" className="hover:text-brick transition-colors">Akce</a>
+            <a href="#kontakt" className="hover:text-brick transition-colors">Kontakt</a>
           </nav>
-          <button className="bg-brick hover:bg-brick-dark text-cream px-6 py-2 rounded-sm font-bold transition-all shadow-lg uppercase text-xs tracking-widest">
+          
+          <motion.button 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="bg-brick hover:bg-brick-dark text-cream px-6 py-2.5 rounded-sm font-bold transition-all shadow-xl uppercase text-[10px] tracking-[0.2em]"
+          >
             Rezervace
-          </button>
+          </motion.button>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-wood-dark/60 z-10" />
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074&auto=format&fit=crop")' }}
-        />
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 text-center text-cream px-4"
-        >
-          <h2 className="text-5xl md:text-7xl font-serif mb-4">Poctivá česká kuchyně</h2>
-          <p className="text-xl md:text-2xl mb-8 font-light italic text-cream/90 font-serif">A ta nejlepší pizza v Brně-Řečkovicích</p>
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <button className="bg-brick hover:bg-brick-dark text-cream px-8 py-3 text-lg font-bold transition-all shadow-xl">
-              DENNÍ MENU
-            </button>
-            <button className="bg-transparent border-2 border-cream hover:bg-cream hover:text-wood px-8 py-3 text-lg font-bold transition-all">
-              NAŠE NABÍDKA
-            </button>
-          </div>
-        </motion.div>
-      </section>
+      <main>
+        <Hero />
 
-      {/* Features */}
-      <section className="py-20 px-6 bg-cream">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="p-8 border border-wood/10 rounded-lg shadow-sm bg-white"
-          >
-            <Utensils className="mx-auto mb-6 text-brick" size={48} />
-            <h3 className="text-2xl font-serif mb-4">Tradiční Kuchyně</h3>
-            <p className="text-wood-dark/70">Klasické české pokrmy připravované z čerstvých a lokálních surovin.</p>
-          </motion.div>
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="p-8 border border-wood/10 rounded-lg shadow-sm bg-white"
-          >
-            <Pizza className="mx-auto mb-6 text-brick" size={48} />
-            <h3 className="text-2xl font-serif mb-4">Ručně Tahaná Pizza</h3>
-            <p className="text-wood-dark/70">Autentická italská receptura a pečení v srdci naší restaurace.</p>
-          </motion.div>
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="p-8 border border-wood/10 rounded-lg shadow-sm bg-white"
-          >
-            <Beer className="mx-auto mb-6 text-brick" size={48} />
-            <h3 className="text-2xl font-serif mb-4">Kamenice 10°</h3>
-            <p className="text-wood-dark/70">Nepasterizované pivo z tanku pro ten nejlepší zážitek.</p>
-          </motion.div>
+        {/* Features Preview - Placeholder for other sections */}
+        <section className="py-24 px-6 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-wood/10 to-transparent" />
+          
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+            <motion.div 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="w-20 h-20 mx-auto mb-8 relative">
+                <div className="absolute inset-0 bg-brick/5 rounded-full group-hover:scale-110 transition-transform duration-500" />
+                <Utensils className="absolute inset-0 m-auto text-brick group-hover:rotate-12 transition-transform duration-500" size={36} />
+              </div>
+              <h3 className="text-2xl font-serif mb-4 text-wood">Tradiční Kuchyně</h3>
+              <p className="text-wood-dark/60 leading-relaxed">Klasické české pokrmy připravované podle receptur, které se v naší kuchyni předávají s láskou.</p>
+            </motion.div>
+
+            <motion.div 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="group"
+            >
+              <div className="w-20 h-20 mx-auto mb-8 relative">
+                <div className="absolute inset-0 bg-brick/5 rounded-full group-hover:scale-110 transition-transform duration-500" />
+                <Pizza className="absolute inset-0 m-auto text-brick group-hover:rotate-12 transition-transform duration-500" size={36} />
+              </div>
+              <h3 className="text-2xl font-serif mb-4 text-wood">Ručně Tahaná Pizza</h3>
+              <p className="text-wood-dark/60 leading-relaxed">Pravá italská pizza s tenkým těstem, čerstvými surovinami a poctivou porcí sýra.</p>
+            </motion.div>
+
+            <motion.div 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="group"
+            >
+              <div className="w-20 h-20 mx-auto mb-8 relative">
+                <div className="absolute inset-0 bg-brick/5 rounded-full group-hover:scale-110 transition-transform duration-500" />
+                <Beer className="absolute inset-0 m-auto text-brick group-hover:rotate-12 transition-transform duration-500" size={36} />
+              </div>
+              <h3 className="text-2xl font-serif mb-4 text-wood">Kamenice 10°</h3>
+              <p className="text-wood-dark/60 leading-relaxed">Vychutnejte si naše nepasterizované pivo z tanku, které je vždy v té nejlepší kondici.</p>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-wood-dark text-cream/40 py-20 px-6 border-t border-wood-light/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="md:col-span-2">
+            <h4 className="text-cream text-xl font-serif mb-6 tracking-wider italic">Restaurace U Schwarzů</h4>
+            <p className="max-w-md leading-relaxed mb-8">
+              Tradiční restaurace a pizzerie v srdci Řečkovic. Zakládáme si na kvalitních surovinách a příjemné atmosféře. Přijďte se přesvědčit sami.
+            </p>
+          </div>
+          
+          <div>
+            <h5 className="text-cream text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Navštivte nás</h5>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin size={16} className="text-brick shrink-0" />
+                <span>Renčova 2132/12,<br />621 00 Brno-Řečkovice</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={16} className="text-brick shrink-0" />
+                <span>+420 123 456 789</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-cream text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Otevírací doba</h5>
+            <ul className="space-y-2 text-sm">
+              <li className="flex justify-between">
+                <span>Po - Čt</span>
+                <span className="text-cream/60">11:00 - 22:00</span>
+              </li>
+              <li className="flex justify-between text-cream/80 font-medium">
+                <span>Pá - So</span>
+                <span className="text-cream">11:00 - 23:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Ne</span>
+                <span className="text-cream/60">11:00 - 21:00</span>
+              </li>
+            </ul>
+          </div>
         </div>
-      </section>
-
-      {/* Footer Info */}
-      <footer className="bg-wood-dark text-cream/60 py-12 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h4 className="text-cream text-lg font-serif mb-4 uppercase tracking-widest">Kde nás najdete</h4>
-            <p className="flex items-start gap-2"><MapPin size={18} className="mt-1 text-brick" /> Banskobystrická 26, Brno-Řečkovice</p>
-          </div>
-          <div>
-            <h4 className="text-cream text-lg font-serif mb-4 uppercase tracking-widest">Rezervace</h4>
-            <p className="flex items-start gap-2"><Phone size={18} className="mt-1 text-brick" /> +420 123 456 789</p>
-          </div>
-          <div className="text-right">
-            <h1 className="text-xl font-serif text-cream font-bold">U SCHWARZŮ</h1>
-            <p className="mt-2 text-sm">&copy; 2024 Všechna práva vyhrazena.</p>
+        
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-wood-light/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.1em]">
+          <p>&copy; 2024 Restaurace U Schwarzů. Všechna práva vyhrazena.</p>
+          <div className="flex space-x-6">
+            <a href="#" className="hover:text-cream transition-colors">Ochrana údajů</a>
+            <a href="#" className="hover:text-cream transition-colors">Cookies</a>
           </div>
         </div>
       </footer>
