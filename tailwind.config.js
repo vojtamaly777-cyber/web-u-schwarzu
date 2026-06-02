@@ -8,25 +8,34 @@ export default {
     extend: {
       colors: {
         wood: {
-          light: '#5D4037',
-          DEFAULT: '#3D2B1F',
-          dark: '#2A1B13',
+          light: '#4A2B1E',
+          DEFAULT: '#2C1810',
+          dark: '#1A0D08',
         },
         brick: {
-          light: '#A64D4D',
-          DEFAULT: '#841B11',
-          dark: '#5D120A',
+          light: '#D32F2F',
+          DEFAULT: '#B22222',
+          dark: '#7B1414',
         },
         cream: {
           light: '#FFFFFF',
-          DEFAULT: '#FAF9F6',
-          dark: '#F5F5DC',
+          DEFAULT: '#FDFCF0',
+          dark: '#F5F2D0',
         },
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],
       },
+      animation: {
+        'ken-burns': 'ken-burns 20s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        'ken-burns': {
+          '0%': { transform: 'scale(1) translate(0, 0)' },
+          '100%': { transform: 'scale(1.2) translate(-2%, -2%)' },
+        }
+      }
     },
   },
   plugins: [],
