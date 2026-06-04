@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Utensils, Pizza, Beer, MapPin, Phone } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import Hero from './components/sections/Hero';
+import About from './components/sections/About';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           </motion.div>
           
           <nav className="hidden lg:flex space-x-10 text-[11px] font-bold tracking-[0.2em] text-cream/70 uppercase">
+            <a href="#o-nas" className="hover:text-brick transition-colors">O nás</a>
             <a href="#menu" className="hover:text-brick transition-colors">Jídelní lístek</a>
             <a href="#pizzerie" className="hover:text-brick transition-colors">Pizzerie</a>
             <a href="#akce" className="hover:text-brick transition-colors">Akce</a>
@@ -39,57 +41,7 @@ function App() {
 
       <main>
         <Hero />
-
-        {/* Features Preview - Placeholder for other sections */}
-        <section className="py-24 px-6 bg-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-wood/10 to-transparent" />
-          
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <motion.div 
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="w-20 h-20 mx-auto mb-8 relative">
-                <div className="absolute inset-0 bg-brick/5 rounded-full group-hover:scale-110 transition-transform duration-500" />
-                <Utensils className="absolute inset-0 m-auto text-brick group-hover:rotate-12 transition-transform duration-500" size={36} />
-              </div>
-              <h3 className="text-2xl font-serif mb-4 text-wood">Tradiční Kuchyně</h3>
-              <p className="text-wood-dark/60 leading-relaxed">Klasické české pokrmy připravované podle receptur, které se v naší kuchyni předávají s láskou.</p>
-            </motion.div>
-
-            <motion.div 
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group"
-            >
-              <div className="w-20 h-20 mx-auto mb-8 relative">
-                <div className="absolute inset-0 bg-brick/5 rounded-full group-hover:scale-110 transition-transform duration-500" />
-                <Pizza className="absolute inset-0 m-auto text-brick group-hover:rotate-12 transition-transform duration-500" size={36} />
-              </div>
-              <h3 className="text-2xl font-serif mb-4 text-wood">Ručně Tahaná Pizza</h3>
-              <p className="text-wood-dark/60 leading-relaxed">Pravá italská pizza s tenkým těstem, čerstvými surovinami a poctivou porcí sýra.</p>
-            </motion.div>
-
-            <motion.div 
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 30 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="group"
-            >
-              <div className="w-20 h-20 mx-auto mb-8 relative">
-                <div className="absolute inset-0 bg-brick/5 rounded-full group-hover:scale-110 transition-transform duration-500" />
-                <Beer className="absolute inset-0 m-auto text-brick group-hover:rotate-12 transition-transform duration-500" size={36} />
-              </div>
-              <h3 className="text-2xl font-serif mb-4 text-wood">Kamenice 10°</h3>
-              <p className="text-wood-dark/60 leading-relaxed">Vychutnejte si naše nepasterizované pivo z tanku, které je vždy v té nejlepší kondici.</p>
-            </motion.div>
-          </div>
-        </section>
+        <About />
       </main>
 
       {/* Footer */}
