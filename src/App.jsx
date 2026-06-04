@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone } from 'lucide-react';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
+import Menu from './components/sections/Menu';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Menu />
       </main>
 
       {/* Footer */}
